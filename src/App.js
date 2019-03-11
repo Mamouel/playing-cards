@@ -51,8 +51,8 @@ class App extends Component {
         <div style={{ display: "flex", marginLeft: 200, justifyContent: "center", height: 300, marginTop: 40 }}>
           {cardsArray && cardsArray.map((card, index) => {
             return (
-              <div>
-                <Card  suits={card.suits} card={card.card} key={index} color={card.color} front={this.state.front}/>
+              <div key={index}>
+                <Card  suits={card.suits} card={card.card} color={card.color} front={this.state.front}/>
               </div>
             ) 
           })}
@@ -65,8 +65,8 @@ class App extends Component {
         <div style={{ display: "flex", marginLeft: 200, justifyContent: "center", marginTop: 40 }}>
           {cardsPickedArray && cardsPickedArray.map((card, index) => {
             return (
-              <div>
-                <Card suits={card.suits} card={card.card} key={index} color={card.color} front={true}/>
+              <div key={index}>
+                <Card suits={card.suits} card={card.card} color={card.color} front={true}/>
               </div>
             ) 
           })}
