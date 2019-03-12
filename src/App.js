@@ -17,6 +17,7 @@ class App extends Component {
 
   shuffle = (array) => {
     let currentIndex = array.length, temporaryValue, randomIndex;
+    console.log(currentIndex)
     while (0 !== currentIndex) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;

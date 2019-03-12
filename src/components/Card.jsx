@@ -1,11 +1,11 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import backCardImg from "../style/backCardImg.png";
-import heart from "../style/heart.png";
-import diamond from "../style/diamond.png";
-import club from "../style/club.png";
-import spade from "../style/spade.png";
+import backCardImg from "../style/images/backCardImg.png";
+import heart from "../style/images/heart.png";
+import diamond from "../style/images/diamond.png";
+import club from "../style/images/club.png";
+import spade from "../style/images/spade.png";
 
 import "../style/components/card.scss";
 
@@ -13,17 +13,16 @@ const Card = (props) => {
 
   const { suits, card, front, color } = props;
 
-
   const getCardSymbol = (suits) => {
     let symbol;
     switch(suits) {
-      case 'Diamond':
+      case "Diamond":
         return symbol = diamond;
-      case 'Heart':
+      case "Heart":
         return symbol = heart;
-      case 'Club':
+      case "Club":
         return symbol = club;
-      case 'Spade':
+      case "Spade":
         return symbol = spade;
       default:
         return symbol;
