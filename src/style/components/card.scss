@@ -1,0 +1,25 @@
+@import "../mixins.scss";
+
+
+.card-container {
+  height: 282px;
+  width: 200px;
+  background-color: white;
+  background-size: cover;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: -188px;
+  font-size: 20px;
+  text-align: center;
+  @include transition (all, 0.25s, ease);
+  @include bp-medium {
+    margin-left: -195px;
+  }
+  @include bp-small {
+    margin-left: -198px;    
+  }
+  @include bp-mobileOnly {
+    margin-left: -200px;    
+  }
+}

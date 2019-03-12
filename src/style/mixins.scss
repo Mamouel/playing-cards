@@ -5,3 +5,36 @@
   -o-transition:      $what $time $how;
   transition:         $what $time $how;
 }
+
+
+
+
+@mixin bp-mobileOnly {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (min-width: 481px) and (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (min-width: 641px) and (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin bp-large {
+  @media only screen and (min-width: 961px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin bp-xl {
+  @media only screen and (min-width: 1201px) {
+    @content;
+  }
+}

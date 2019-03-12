@@ -1,10 +1,13 @@
-import React from 'react'
-import backCardImg from "../style/backCardImg.png";
+import React from "react";
+import PropTypes from 'prop-types';
 
-import heart from "../style/heart.png"
-import diamond from "../style/diamond.png"
-import club from "../style/club.png"
-import spade from "../style/spade.png"
+import backCardImg from "../style/backCardImg.png";
+import heart from "../style/heart.png";
+import diamond from "../style/diamond.png";
+import club from "../style/club.png";
+import spade from "../style/spade.png";
+
+import "../style/components/card.scss";
 
 const Card = (props) => {
 
@@ -24,13 +27,13 @@ const Card = (props) => {
         return symbol = spade;
       default:
         return symbol;
-    }
-  }
+    };
+  };
 
   if(front === true) {
     const cardSymbol = getCardSymbol(suits);
     return (
-      <div style={{ height: 282, width: 200, backgroundColor: "white", position: "relative", border: "1px solid black", borderRadius: 10, marginLeft: -180, color: `${color}`, fontSize: 20, textAlign: "center" }}>
+      <div className="card-container" style={{ color: `${color}` }}>
         <div  style={{ position: "absolute", top: 5, left: 5 }}>
           <div style={{ maxWidth: 20 }}>{card}</div>
           <img src={cardSymbol} alt="suit-symbol" style={{ maxWidth: 20 }}/>
@@ -43,12 +46,19 @@ const Card = (props) => {
           <img src={cardSymbol} alt="suit-symbol" style={{ maxWidth: 20 }}/>        
         </div>
       </div> 
-    )
+    );
   } else {
     return (
-      <div style={{ height: 282, width: 200, backgroundImage: `url(${backCardImg})`, backgroundSize: "cover", position: "relative", border: "1px solid black", borderRadius: 10, marginLeft: -180, color: `${color}` }}></div>
-    )
-  }
-}
+      <div className="card-container" style={{ backgroundImage: `url(${backCardImg})`, color: `${color}` }}></div>
+    );
+  };
+};
+
+Card.propTypes = {
+  suits: PropTypes.string,
+  card: PropTypes.string,
+  front: PropTypes.bool,
+  color: PropTypes.string
+};
 
 export default Card;

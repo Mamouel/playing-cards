@@ -27,13 +27,26 @@ body {
     @include transition (all, 0.25s, ease);
     &:hover, &:focus {
       color: brown;
-      border: 1px solid  brown;
+      border: 1px solid brown;
     }
     &:active {
       box-shadow: 0 2px 4px 2px rgba(54, 39, 28, 0);
     }
     &:focus {
       outline: black !important;
+    }
+    @include bp-medium {
+      font-size: 20px;
+    }
+    @include bp-small {
+      font-size: 18px;
+      color: brown;
+      border: 1px solid brown;
+    }
+    @include bp-mobileOnly {
+      font-size: 14px;
+      color: brown;
+      border: 1px solid brown;
     }
   }
 }
