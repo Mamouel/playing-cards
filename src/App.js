@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from "./components/Card" ;
-import { deckArray } from "./components/DeckArray";
+import ActionsButtons from "./components/ActionsButtons" ;
+import { deckArray } from "./utils/DeckArray";
 
 
 class App extends Component {
@@ -48,24 +49,22 @@ class App extends Component {
 
     return (
       <div style={{ width: "90%" }}>
-        <div style={{ display: "flex", marginLeft: 200, justifyContent: "center", height: 300, marginTop: 40 }}>
+        <div  style={{ display: "flex", marginLeft: 200, justifyContent: "center", height: 300, marginTop: 40 }}>
           {cardsArray && cardsArray.map((card, index) => {
             return (
-              <div key={index}>
-                <Card  suits={card.suits} card={card.card} color={card.color} front={this.state.front}/>
+              <div className="animated slideInDown" key={index}>
+                <Card suits={card.suits} card={card.card} color={card.color} front={this.state.front}/>
               </div>
             ) 
           })}
         </div>
-        <div style={{ marginTop: 40, textAlign: "center" }}>
-          <button onClick={() => this.shuffle(deckArray)}>Shuffle</button>
-          <button onClick={() => this.dealOneCard()}>Deal one card</button>
-          <button onClick={() => this.flip()}>Flip</button>
-        </div>
-        <div style={{ display: "flex", marginLeft: 200, justifyContent: "center", marginTop: 40 }}>
+        
+        <ActionsButtons shuffle={this.shuffle} dealOneCard={this.dealOneCard} flip={this.flip} deckArray={deckArray} />
+
+        <div style={{ display: "flex", marginLeft: 200, justifyContent: "center" }}>
           {cardsPickedArray && cardsPickedArray.map((card, index) => {
             return (
-              <div key={index}>
+              <div className="animated slideInUp" key={index}>
                 <Card suits={card.suits} card={card.card} color={card.color} front={true}/>
               </div>
             ) 
